@@ -10,11 +10,24 @@ function agregarAmigo() {
     amigos.push(nombre);
     console.log(nombre);
     limpiarCaja();
+    actualizarLista();
   }
 }
 
-function recorrerLista() {
-    
+function actualizarLista() {
+  // Obtener el elemento de la lista
+  let lista = document.getElementById("listaAmigos");
+
+  // Limpiar la lista existente
+  lista.innerHTML = "";
+
+  // Iterar sobre el arreglo y agregar elementos a la lista
+  for (let i = 0; i < amigos.length; i++) {
+    const amigo = amigos[i];
+    let item = document.createElement("li"); // Crear un elemento <li>
+    item.textContent = amigo; // Asignar el nombre del amigo al <li>
+    lista.appendChild(item); // Agregar el <li> a la lista
+  }
 }
 
 function limpiarCaja() {
