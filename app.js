@@ -3,12 +3,13 @@
 
 let amigos = [];
 function agregarAmigo() {
+  // seleccionamos el valor ingresado
   let nombre = document.getElementById("amigo").value;
   if (nombre === "") {
     alert("Por favor, inserte un nombre.");
   } else {
+    // agrega el nombre al arreglo
     amigos.push(nombre);
-    console.log(nombre);
     limpiarCaja();
     actualizarLista();
   }
@@ -29,14 +30,14 @@ function actualizarLista() {
 }
 
 function sortearAmigo() {
+  //  Comprueba si la lista esta vacia
   if (amigos.length === 0) {
     alert('La lista esta vacia')
   } else {
+    // Crea el indice aleatorio del arreglo
     let amigoAleatorio = Math.floor(Math.random()* amigos.length) ; 
-    console.log(amigoAleatorio);
     // Obtiene el nombre sorteado
     let indice = amigos[amigoAleatorio];
-    console.log(indice);
     
     // Mostrar el nombre sorteado en el elemento
     document.getElementById('resultado').innerHTML = `Amigo sorteado: ${indice}`
